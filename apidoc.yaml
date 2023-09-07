@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: 同济高程论坛
+  description: 同济高程论坛API
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+tags:
+  - name: UserService
+    description: 用户相关服务，由Rust + tonic + SeaORM驱动
+paths:
+ /api/user/login:
+    post:
+      tags:
+        - UserService
+      summary: 登录
+      description: 登录
+      responses:
+        200:
+          description: 成功
+          content:
+            application/json: { }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: 用户名
+                  type: string
+                password:
+                  description: 密码
+                  type: string
+

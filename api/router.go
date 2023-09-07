@@ -13,5 +13,7 @@ func Router() chi.Router {
 		_, _ = writer.Write([]byte("Service OK"))
 	})
 
+	r.Mount("/user", RouteUserService())
+
 	return r
 }
